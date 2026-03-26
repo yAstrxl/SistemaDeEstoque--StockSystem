@@ -20,5 +20,4 @@ public class ProdutoModel {
     private long quantidade;
     private String valor;
     private String total;
-
 }   
