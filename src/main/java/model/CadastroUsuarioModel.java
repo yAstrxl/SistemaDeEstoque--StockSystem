@@ -35,6 +35,14 @@ public class CadastroUsuarioModel {
         this.nome = nome;
     }
 
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
     public String getCpf() {
         return cpf;
     }
@@ -114,5 +122,6 @@ public class CadastroUsuarioModel {
     public void setFuncao(String funcao) {
         this.funcao = funcao;
     }
+     
      
 }

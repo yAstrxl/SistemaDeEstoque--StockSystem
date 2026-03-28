@@ -28,99 +28,103 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <a href="#">
                             Gerenciamento
                         </a>
+                    </li>
+                    <li>
+                        <a href="cadastro.html">
+                            Cadastro
+                        </a>
                     </li>    
                 </ul>
             </nav>
         </header>
-            <main>
-                <section id="resumoEstoque">
-                    <div class="card-resumo">
-                        <h2 class="titulo-card">Entrada</h2>
-                        <p class="valor-card">100</p>
-                    </div>
-                    <div class="card-resumo">
-                        <h2 class="titulo-card">Saida</h2>
-                        <p class="valor-card">80</p>
-                    </div>
-                    <div class="card-resumo">
-                        <h2 class="titulo-card">Total</h2>
-                        <p class="valor-card">20</p>
-                    </div>
-                </section>
-                <section id="filtro">
-                    <div class="grupo-filtro">
-                        <label for="filtroData">Data</label>
-                        <input type="date" id="filtroData" class="input-filtro">
-                    </div>
-                    <div class="grupo-filtro">
-                        <label for="tipoMovimentacao">Tipo</label>
-                        <select id="tipoMovimentacao" class="select-filtro">
-                            <option value="">Selecione uma opção</option>
-                            <option value="entrada">Entrada</option>
-                            <option value="saida">Saida</option>
-                        </select>
-                    </div>
-                    <div class="grupo-filtro pesquisa-nome">
-                        <label for="pesquisarNome">Pesquisar item</label>
-                        <input type="text" id="pesquisarNome" class="input-filtro" placeholder="Digite o nome do produto">
-                    </div>
-                    <div class="grupo-filtro botao-pesquisa">
-                        <button id="btnPesquisar" class="btn-pesquisa">Pesquisar</button> 
-                    </div>
-                </section>
-                <section id="tabelaEstoqueContainer">
-                    <div class="tabela-wrapper">
-                        <table id="tabelaEstoque">
-                            <thead>
-                                <tr>
-                                    <th>Codigo de barras</th>
-                                    <th>Nome</th> 
-                                    <th>Fabricante</th> 
-                                    <th>Marca</th> 
-                                    <th>Quantidade</th> 
-                                    <th>Valor Unitario</th>
-                                    <th>Total</th> 
-                                </tr>
-                            </thead>
-                            <tbody id="corpoTabela">
-                                <tr class="linha-item">
-                                    <td>123456789</td>
-                                    <td>Mouse</td>
-                                    <td>Logitech</td>
-                                    <td>MX</td>
-                                    <td>20</td>
-                                    <td>R$60,00</td>
-                                    <td>R$1.200,00</td>    
-                                </tr>
-                                <tr class="linha-item">
-                                    <td>234567891</td>
-                                    <td>Teclado</td>
-                                    <td>Logitech</td>
-                                    <td>MXC</td>
-                                    <td>20</td>
-                                    <td>R$50,00</td>
-                                    <td>R$1.000,00</td>    
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>    
-                </section>
-                <section id="paginacao">
-                    <div class="controle-paginacao">
-                        <label for="pagina">Página</label>
-                        <select id="pagina">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </div>
-                    <div class="container-btn">
-                        <button id="btnVoltar" class="btnVoltar">Voltar</button>
-                        <button id="btnProximo" class="btnProximo">Proximo</button>
-                    </div>
-                </section>
-            </main>          
-        </header>>
+        <main>
+            <section id="resumoEstoque">
+                <div class="card-resumo">
+                    <h2 class="titulo-card">Entrada</h2>
+                    <p class="valor-card">100</p>
+                </div>
+                <div class="card-resumo">
+                    <h2 class="titulo-card">Saida</h2>
+                    <p class="valor-card">80</p>
+                </div>
+                <div class="card-resumo">
+                    <h2 class="titulo-card">Total</h2>
+                    <p class="valor-card">20</p>
+                </div>
+            </section>
+            <section id="filtro">
+                <div class="grupo-filtro">
+                    <label for="filtroData">Data</label>
+                    <input type="date" id="filtroData" class="input-filtro">
+                </div>
+                <div class="grupo-filtro">
+                    <label for="tipoMovimentacao">Tipo</label>
+                    <select id="tipoMovimentacao" class="select-filtro">
+                        <option value="">Selecione uma opção</option>
+                        <option value="entrada">Entrada</option>
+                        <option value="saida">Saida</option>
+                    </select>
+                </div>
+                <div class="grupo-filtro pesquisa-nome">
+                    <label for="pesquisarNome">Pesquisar item</label>
+                    <input type="text" id="pesquisarNome" class="input-filtro" placeholder="Digite o nome do produto">
+                </div>
+                <div class="grupo-filtro botao-pesquisa">
+                    <button id="btnPesquisar" class="btn-pesquisa">Pesquisar</button> 
+                </div>
+            </section>
+            <section id="tabelaEstoqueContainer">
+                <div class="tabela-wrapper">
+                    <table id="tabelaEstoque">
+                        <thead>
+                            <tr>
+                                <th>Codigo de barras</th>
+                                <th>Nome</th> 
+                                <th>Fabricante</th> 
+                                <th>Marca</th> 
+                                <th>Quantidade</th> 
+                                <th>Valor Unitario</th>
+                                <th>Total</th> 
+                            </tr>
+                        </thead>
+                        <tbody id="corpoTabela">
+                            <tr class="linha-item">
+                                <td>123456789</td>
+                                <td>Mouse</td>
+                                <td>Logitech</td>
+                                <td>MX</td>
+                                <td>20</td>
+                                <td>R$60,00</td>
+                                <td>R$1.200,00</td>    
+                            </tr>
+                            <tr class="linha-item">
+                                <td>234567891</td>
+                                <td>Teclado</td>
+                                <td>Logitech</td>
+                                <td>MXC</td>
+                                <td>20</td>
+                                <td>R$50,00</td>
+                                <td>R$1.000,00</td>    
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>    
+            </section>
+            <section id="paginacao">
+                <div class="controle-paginacao">
+                    <label for="pagina">Página</label>
+                    <select id="pagina">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="container-btn">
+                    <button id="btnVoltar" class="btnVoltar">Voltar</button>
+                    <button id="btnProximo" class="btnProximo">Proximo</button>
+                </div>
+            </section>
+        </main>          
     </body>
 </html>

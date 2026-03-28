@@ -20,7 +20,7 @@ body {
 
 nav ul {
     display: flex;
-    list-style: nome;
+    list-style: none; /* CORRIGIDO: de 'nome' para 'none' */
     gap: 20px;
 }
 
@@ -31,7 +31,7 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--primary-dark)
+    color: var(--primary-dark); /* CORRIGIDO: faltava o ponto e vírgula */
 }
 
 main {
@@ -51,7 +51,7 @@ main {
     flex-wrap: wrap;
 }
 
-.dadosPessoias,
+.dadosPessoais,
 .containerEndereco {
     flex: 1;
     min-width: 300px;
@@ -79,7 +79,7 @@ select:focus {
     border-color: var(--primary-medium);
 }
 
-.dadosPessoias p {
+.dadosPessoais p {
     margin-top: 10px;
     font-weight: bold;
 }
