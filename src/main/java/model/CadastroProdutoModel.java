@@ -1,14 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
-/**
- *
- * @author 232.004836
- */
 public class CadastroProdutoModel {
+    
     private int id;
     private String codigoBarras;
     private String nomeProduto;
@@ -19,7 +12,7 @@ public class CadastroProdutoModel {
     private long quantidade;
     private String valor;
     private String total;
-    
+
     public String getCodigoBarras() {
         return codigoBarras;
     }
@@ -91,5 +84,6 @@ public class CadastroProdutoModel {
     public void setTotal(String total) {
         this.total = total;
     }
+    
     
 }

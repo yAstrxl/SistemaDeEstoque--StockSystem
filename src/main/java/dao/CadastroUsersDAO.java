@@ -1,45 +1,46 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package dao;
 
-import Connection.ConnectionFactory;
+import connection.ConnectionFactory;
 import java.sql.PreparedStatement;
 import model.CadastroUsuarioModel;
-/**
- *
- * @author 232.004836
- */
+
 public class CadastroUsersDAO {
     
-    
-    public boolean cadastrar(CadastroUsuarioModel user){
-        String sql = "TNSERT INTO users" +
-                "(username, passw, nome, sobrenome, matricula, cpf, sexo, email, telefone, função, cep, endereço, bairro, cidade, estado, numero, complemento)" +
-                "VALUE(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-        try (var con = ConnectionFactory.getConnection()){
-            PreparedStatement stmt = con.prepareStatement(sql);
-            stmt.setString(1,user.getNome());
-            stmt.setString(1,user.getSobrenome());
-            stmt.setString(1,user.getCpf());
-            stmt.setLong(1,user.getCep());
-            stmt.setString(1,user.getEstado());
-            stmt.setString(1,user.getBairro());
-            stmt.setString(1,user.getCidade());
-            stmt.setLong(1,user.getNumero());
-            stmt.setString(1,user.getComplemento());
-            stmt.setString(1,user.getNomeUsuario());
-            stmt.setString(1,user.getSenha());
-            stmt.setString(1,user.getFuncao());
-            
-            stmt.executeUpdate();
-            
-            return true;
-            
-        }catch (Exception e){
-            e.printStackTrace();
-            return false;
-        }
+    public boolean cadastrar(CadastroUsuarioModel user) {
+        String sql = "INSERT INTO users " + 
+"(username, psw, nameFirst, sobrenome, matricula, cpf, sexo, dtaNascimento, email, telefone, funcao, cep, endereco, numero, bairro, cidade, estado, complemento) " +
+"VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+try (var con = ConnectionFactory.getConnection()) {
+
+    PreparedStatement stmt = con.prepareStatement(sql);
+
+    stmt.setString(1, user.getNomeUsuario());   // username
+    stmt.setString(2, user.getSenha());         // psw
+    stmt.setString(3, user.getNome());          // nameFirst
+    stmt.setString(4, user.getSobrenome());
+    stmt.setString(5, user.getMatricula());
+    stmt.setString(6, user.getCpf());
+    stmt.setString(7, user.getSexo());
+    stmt.setString(8, user.getDtaNascimento());
+    stmt.setString(9, user.getEmail());
+    stmt.setString(10, user.getTelefone());
+    stmt.setString(11, user.getFuncao());
+    stmt.setString(12, user.getCep());
+    stmt.setString(13, user.getEndereco());
+    stmt.setLong(14, user.getNumero());
+    stmt.setString(15, user.getBairro());
+    stmt.setString(16, user.getCidade());
+    stmt.setString(17, user.getEstado());
+    stmt.setString(18, user.getComplemento());
+
+    stmt.executeUpdate();
+
+    return true;
+
+} catch (Exception e) {
+    e.printStackTrace();
+    return false;
+}
     }
 }

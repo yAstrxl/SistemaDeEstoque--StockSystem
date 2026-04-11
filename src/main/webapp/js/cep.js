@@ -1,13 +1,13 @@
-document.addEventListener("DOMContentLoaded", function() {
-   const campoCep = document.getElementById("cep");
-   
-   campoCep.addEventListener("blur", buscarCep);
-   campoCep.addEventListener("keypress", function(e) {
-       if (e.key === "Enter") {
-           e.preventDefault();
-           buscarCep;
-       }
-   });
+document.addEventListener("DOMContentLoaded", function(){
+    const campoCep = document.getElementById("cep");
+    
+    campoCep.addEventListener("blur", buscarCep);
+    campoCep.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            buscarCep();
+        }
+    });
 });
 
 async function buscarCep() {
@@ -15,16 +15,16 @@ async function buscarCep() {
     
     const cep = campoCep.value.replace(/\D/g, "");
     
-    if(cep.length !== 8) {
+    if (cep.length !== 8){
         if(cep.length < 0) {
             alert("O seu CEP está incorreto.");
-            limparCamposEndereco();
+            limparCampoEndereco();
         }
         return;
     }
     
     campoCep.style.borderColor = '#aaa';
-    preencherCampo({aguardando: true});
+    preencherCampos({aguardando: true});
     
     try {
         const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
@@ -32,51 +32,63 @@ async function buscarCep() {
         
         if (dados.erro) {
             alert("CEP não encontrado.");
-            limparCamposEndereco();
+            limparCampoEndereco();
             campoCep.style.borderColor = "red";
             return;
         }
         
-        preencherCampo(dados);
+        preencherCampos(dados);
         campoCep.style.bordercolor = "green";
         
-        campoCep.value = cep.replace(/(\d{5}) (\d{3})/, "$1-$2");
+        campoCep.value = cep.replace(/(\d{5})(\d{3})/, "$1-$2");
         
-        document.getElementById("numero"); 
-        
+        document.getElementById("numero");
     } catch (error) {
         alert("Verifique a conexão com a internet");
         limparCamposEndereco();
         campoCep.style.borderColor = "red";
         console.error('Erro na busca do CEP: ', error);
-        
     }
 }
 
-function preencherCampo(dados){
-    if (dados.aguardando){
-        document.getElementById("cidade").value = "Buscando CPF...";
-        document.getElementById("endereco").value = "Buscando CPF...";
-        document.getElementById("bairro").value = "Buscando CPF...";
-        document.getElementById("estado").value = "Buscando CPF...";
+function preencherCampos(dados) {
+    if(dados.aguardando) {
+        document.getElementById("endereco").value = "Buscando CEP...";
+        document.getElementById("bairro").value = "Buscando CEP...";
+        document.getElementById("cidade").value = "Buscando CEP...";
+        document.getElementById("estado").value = "Buscando CEP...";
+        
         return;
     }
     
-    document.getElementById("cidade").value = dados.localidade || "";
     document.getElementById("endereco").value = dados.logradouro || "";
     document.getElementById("bairro").value = dados.bairro || "";
+    document.getElementById("cidade").value = dados.localidade || "";
     document.getElementById("estado").value = dados.uf || "";
     
-    if(dados.complemento){
-         document.getElementById("complemento").value = dados.complemento;
+    if(dados.complemento) {
+        document.getElementById("complemento").value = dados.complemento;
     }
 }
 
-function limparCamposEndereco(){
-    document.getElementById("cidade").value = "";
+function limparCamposEndereco() {
     document.getElementById("endereco").value = "";
-    document.getElementById("bairro").value = "";
-    document.getElementById("complemento").value = "";
     document.getElementById("numero").value = "";
+    document.getElementById("bairro").value = "";
+    document.getElementById("cidade").value = "";
     document.getElementById("estado").value = "";
+    document.getElementById("complemento").value = "";
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const campoCep = document.getElementById("cep");
+    
+    campoCep.addEventListener("input", function(){
+       let valor = this.value.replace(/\D/g, "");
+       
+       if(valor.length > 5) {
+           valor = valor.substring(0, 5) + "-" + valor.substring(5, 8);
+       }
+       this.value = valor;
+    });
+});

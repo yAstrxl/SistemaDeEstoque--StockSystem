@@ -1,51 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/color.css">
-    <link rel="stylesheet" href="css/login.css">
-    <title>
-        StockFree | LOGIN
-    </title>
-</head>
-
-<body>
-    
-    <main>
-        <form action="api/login" method="post">
+<html>
+    <head>
+        <link rel="stylesheet" href="css/reset.css"/>
+        <link rel="stylesheet" href="css/color.css"/>
+        <link rel="stylesheet" href="css/login.css"/>
+        <title>Sistema de estoque</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <form action="login" method="post">
             <div class="container">
-                <div class="loginArea">
-                    <header>
-                        <h1 class="logHeader">
-                            Login
-                        </h1>
-                    </header>
-                    <div>
-                        <label class="userLabel">
-                            Usuário
-                        </label>
-                        <input type="text" name="users" class="inputUser" />
-                    </div>
-
-                    <div>
-                        <label class="passwordLabel">
-                            Senha
-                        </label>
-                        <input type="password" name="passw" class="inputPassword" />
-                    </div>
-
-                    <div class="inputbutton">
-                        <button type="submit" class="button">
-                            Entrar
-                        </button>
-                    </div></div>
+                <h1>Login</h1>
+                <div>
+                    <label>Usuário</label>
+                    <input type="text" name="users" class="inputUser"/>
                 </div>
+                <div>
+                    <label>Senha</label>
+                    <input type="password" name="passw" class="inputPassword"/>
+                </div>
+                    <button type="submit">Entrar</button>
+            </div>
         </form>
-    </main>
-    <footer></footer>
-</body>
-
+    </body>
 </html>

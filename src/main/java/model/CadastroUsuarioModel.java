@@ -1,87 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
-/**
- *
- * @author 232.004836
- */
 public class CadastroUsuarioModel {
-     private int id;
-     private String nome;
-     private String sobrenome;
-     private String matricula;
-     private String sexo;
-     private String dtaNascimento; 
-     private String email;
-     private String telefone;
-     private String endereco;
-     private String cpf;
-     private long cep;
-     private String estado;
-     private String bairro;
-     private String cidade;
-     private long numero;
-     private String complemento;
-     private String nomeUsuario;
-     private String senha;
-     
-    public CadastroUsuarioModel () {
-         
-    }
-    
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
-
-    public String getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-
-    public String getDtaNascimento() {
-        return dtaNascimento;
-    }
-
-    public void setDtaNascimento(String dtaNascimento) {
-        this.dtaNascimento = dtaNascimento;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-     private String funcao;
-
-    
+    private int id;
+    private String nome;
+    private String sobrenome;
+    private String dtaNascimento;
+    private String telefone;
+    private String email;
+    private String sexo;
+    private String matricula;
+    private String cpf;
+    private String cep;
+    private String endereco;
+    private String estado;
+    private String bairro;
+    private String cidade;
+    private long numero;
+    private String complemento;
+    private String nomeUsuario;
+    private String senha;
+    private String funcao;
 
     public String getNome() {
         return nome;
@@ -107,12 +45,20 @@ public class CadastroUsuarioModel {
         this.cpf = cpf;
     }
 
-    public long getCep() {
+    public String getCep() {
         return cep;
     }
 
-    public void setCep(long cep) {
+    public void setCep(String cep) {
         this.cep = cep;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     public String getEstado() {
@@ -178,6 +124,52 @@ public class CadastroUsuarioModel {
     public void setFuncao(String funcao) {
         this.funcao = funcao;
     }
-     
-     
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public String getDtaNascimento() {
+        return dtaNascimento;
+    }
+
+    public void setDtaNascimento(String dtaNascimento) {
+        this.dtaNascimento = dtaNascimento;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 }

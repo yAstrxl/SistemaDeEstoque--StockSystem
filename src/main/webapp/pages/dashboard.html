@@ -1,39 +1,21 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
 <html>
     <head>
-        <title>StockFree | Dashboard</title>
+        <link rel="stylesheet" href="../css/reset.css"/>
+        <link rel="stylesheet" href="../css/color.css"/>
+        <link rel="stylesheet" href="../css/dashboard.css"/>
+        <title>Dashboard</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../css/reset.css">
-        <link rel="stylesheet" href="../css/color.css">
-        <link rel="stylesheet" href="../css/dashboard.css">
     </head>
     <body>
         <header id="header">
-            <h1 id="tituloDashboard">
-                STOCKFREE
-            </h1>
+            <h1 id="tituloDashboard">Sistema de estoque</h1>
             <nav>
                 <ul>
-                    <li>
-                        <a href="#">
-                            Inicio
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Gerenciamento
-                        </a>
-                    </li>
-                    <li>
-                        <a href="cadastro.html">
-                            Cadastro
-                        </a>
-                    </li>    
+                    <li><a href="dashboard.html" >Inicio</a></li>
+                    <li><a href="#" >Gerenciamento</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
                 </ul>
             </nav>
         </header>
@@ -44,7 +26,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                     <p class="valor-card">100</p>
                 </div>
                 <div class="card-resumo">
-                    <h2 class="titulo-card">Saida</h2>
+                    <h2 class="titulo-card">Saída</h2>
                     <p class="valor-card">80</p>
                 </div>
                 <div class="card-resumo">
@@ -62,15 +44,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                     <select id="tipoMovimentacao" class="select-filtro">
                         <option value="">Selecione uma opção</option>
                         <option value="entrada">Entrada</option>
-                        <option value="saida">Saida</option>
+                        <option value="saida">Saída</option>
                     </select>
                 </div>
                 <div class="grupo-filtro pesquisa-nome">
                     <label for="pesquisarNome">Pesquisar item</label>
-                    <input type="text" id="pesquisarNome" class="input-filtro" placeholder="Digite o nome do produto">
+                    <input type="text" id="pesquisarNome" class="input-filtro" placeholder="Digite o nome do produto" >
                 </div>
                 <div class="grupo-filtro botao-pesquisa">
-                    <button id="btnPesquisar" class="btn-pesquisa">Pesquisar</button> 
+                    <button id="btnPesquisar" class="btn-pesquisa">Pesquisar</button>
                 </div>
             </section>
             <section id="tabelaEstoqueContainer">
@@ -78,13 +60,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                     <table id="tabelaEstoque">
                         <thead>
                             <tr>
-                                <th>Codigo de barras</th>
-                                <th>Nome</th> 
-                                <th>Fabricante</th> 
-                                <th>Marca</th> 
-                                <th>Quantidade</th> 
-                                <th>Valor Unitario</th>
-                                <th>Total</th> 
+                                <th>Código de barras</th>
+                                <th>Nome</th>
+                                <th>Fabricante</th>
+                                <th>Marca</th>
+                                <th>Quantidade</th>
+                                <th>Valor unitário</th>
+                                <th>Total</th>
                             </tr>
                         </thead>
                         <tbody id="corpoTabela">
@@ -93,22 +75,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                                 <td>Mouse</td>
                                 <td>Logitech</td>
                                 <td>MX</td>
-                                <td>20</td>
-                                <td>R$60,00</td>
-                                <td>R$1.200,00</td>    
+                                <td>10</td>
+                                <td>R$80,00</td>
+                                <td>R$800,00</td>
                             </tr>
                             <tr class="linha-item">
-                                <td>234567891</td>
+                                <td>123456780</td>
                                 <td>Teclado</td>
                                 <td>Logitech</td>
                                 <td>MXC</td>
-                                <td>20</td>
-                                <td>R$50,00</td>
-                                <td>R$1.000,00</td>    
+                                <td>10</td>
+                                <td>R$90,00</td>
+                                <td>R$900,00</td>
                             </tr>
                         </tbody>
                     </table>
-                </div>    
+                </div>
             </section>
             <section id="paginacao">
                 <div class="controle-paginacao">
@@ -120,11 +102,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                         <option value="4">4</option>
                     </select>
                 </div>
-                <div class="container-btn">
-                    <button id="btnVoltar" class="btnVoltar">Voltar</button>
-                    <button id="btnProximo" class="btnProximo">Proximo</button>
+                <div class="conteiner-btn">
+                    <button id="btnVoltar" class="btn-voltar">Voltar</button>
+                    <button id="btnProximo" class="btn-proximo">Próximo</button>
                 </div>
             </section>
-        </main>          
+        </main>
     </body>
 </html>
